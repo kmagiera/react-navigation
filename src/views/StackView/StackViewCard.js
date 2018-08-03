@@ -1,6 +1,8 @@
 import React from 'react';
-import { Animated, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import createPointerEventsContainer from './createPointerEventsContainer';
+
+import { Screen } from 'react-native-screens';
 
 /**
  * Component that renders the scene as card for the <StackView />.
@@ -9,13 +11,13 @@ class Card extends React.Component {
   render() {
     const { children, pointerEvents, style } = this.props;
     return (
-      <Animated.View
+      <Screen
         pointerEvents={pointerEvents}
         ref={this.props.onComponentRef}
         style={[styles.main, style]}
       >
         {children}
-      </Animated.View>
+      </Screen>
     );
   }
 }
